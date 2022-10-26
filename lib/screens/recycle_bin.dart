@@ -20,8 +20,10 @@ class RecycleBin extends StatelessWidget {
             title: const Text('Recycle Bin'),
             actions: [
               IconButton(
-                onPressed: () {},
-                icon: const Icon(Icons.add),
+                onPressed: () {
+                  context.read<TasksBloc>().add(DeleteAllTasks());
+                },
+                icon: const Icon(Icons.delete_forever),
               ),
             ],
           ),
